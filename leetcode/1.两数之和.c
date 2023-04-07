@@ -8,6 +8,7 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
+#include <stddef.h>
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     int* result = (int*) malloc(2 * sizeof(int));
     *returnSize = 0; //修改指向的值
