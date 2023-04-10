@@ -24,7 +24,5 @@ class Solution:
                             return True
                 if (flag == False):
                     break
-        return False
-            
-# “‘≥¨ ±∏Ê÷’°£°£°£        
+        return False     
         
