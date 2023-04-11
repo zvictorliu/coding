@@ -15,6 +15,11 @@ class Solution:
     
 s = "catsandog"
 wordDict = ["cats","dog","sand","and","cat"]
-result = Solution.wordBreak(None, s, wordDict)
+
+res = Solution()
+result = res.wordBreak(s, wordDict)
 print(result)
+
+# result = Solution.wordBreak(None, s, wordDict)
+# print(result)
 
