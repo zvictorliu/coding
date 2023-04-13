@@ -7,7 +7,7 @@ class Solution{
 public:
     int max_limit(vector<int> &R, int cnt){
         int N = R.size();
-        int n = N;
+        int n_const = N;
         int final_limit = 0;
 
         while (1)
@@ -20,7 +20,8 @@ public:
             }
 
             cnt -= (limit * N);
-            for (int i = 0; i < N; i++){
+            N = n_const;
+            for (int i = 0; i < n_const; i++){
                 if (R[i] > 0) R[i] -= limit;
                 if (R[i] <= 0) {
                     N --;
@@ -29,12 +30,9 @@ public:
                 }
             }
 
-            if (N == 0) {
-                if (cnt >= 0) return -1;
-            }
+            if (N == 0) return -1;
 
-            final_limit += limit;
-            if (cnt == 0) return final_limit;            
+            final_limit += limit;         
         }
         return final_limit;
     }
