@@ -16,7 +16,7 @@ public:
             limit = cnt / N;
 
             if (limit == 0){
-                return (++final_limit);
+                return final_limit;
             }
 
             cnt -= (limit * N);
