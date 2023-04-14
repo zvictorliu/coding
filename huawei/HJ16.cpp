@@ -6,16 +6,18 @@ class Solution{
 
 public:
     int max_satification(int N, vector<vector<int>> items, int num){
-        vector<vector<int>> dp(num, vector<int> (N+1,0)); // æ˜¯å¯ä»¥å–åˆ°Nçš„
+        vector<vector<int>> dp(num, vector<int> (N+1,0)); // æ˜?å?ä»¥å–åˆ°Nçš?
 
         for (int i = 0; i < num; i++){
             for (int j = 0; j <= N; j++){
-                // dp[i][j] æ˜¯ ä¸è¦è¯¥ä¸»ä»¶ ä¸ è¦ä¸»ä»¶ï¼ˆåªè¦ä¸»ä»¶ï¼Œä¸»ä»¶+é™„ä»¶1ï¼Œä¸»ä»¶+é™„ä»¶2ï¼Œä¸»ä»¶+é™„ä»¶1å’Œ2ï¼‰ä¸­æœ€ä¼˜çš„ç»“æœ
+                // dp[i][j] æ˜? ä¸è?è?¥ä¸»ä»? ä¸? è¦ä¸»ä»¶ï¼ˆå?è¦ä¸»ä»¶ï¼Œä¸»ä»¶+é™„ä»¶1ï¼Œä¸»ä»?+é™„ä»¶2ï¼Œä¸»ä»?+é™„ä»¶1å’?2ï¼‰ä¸­æœ€ä¼˜çš„ç»“æœ
 
 
             }
 
         }
+
+        return 0;
 
     }
 
@@ -27,19 +29,19 @@ int main() {
     cin >> N >> m;
     vector<vector<vector<int>>> data(m+1, vector<vector<int>> (2, {0}));
     for (int i = 1; i <= m; i++){
-        int p;
-        vector<int> it(2,0);
-        cin >> it[0] >> it[1] >> p;
+        int v,w,p;
+        cin >> v >> w >> p;
         if (p == 0){
-            data[i][0][0] = it[0];
-            data[i][1][0] = it[1];
+            data[i][0][0] = v;
+            data[i][1][0] = w;
         }
         else {
-            data[p].push_back(it);
+            data[p][0].push_back(v);
+            data[p][1].push_back(w); //²»¹ıÒ²Ğí²¢²»±ØÒª£¬¶¼Ä¬ÈÏÁ½¸ö¸½¼ş£¬²»¹ı¾ÍÒªÅĞ¶ÏÏÈºóÁË
         }
     }
 
-    Solution res;
+    // Solution res;
     // cout << res.max_satification(N, items, num) << endl;
 
 
