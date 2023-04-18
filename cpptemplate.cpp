@@ -14,7 +14,7 @@ public:
 int main() {
 
     Solution res;
-    cout << res.solutionFunc() << endl;
+    // cout << res.solutionFunc() << endl;
     
     return 0;
 }

@@ -13,17 +13,14 @@ public:
             st.insert(nums[i]);
         }
         bool flag;
-        // flag = dfs(st, 0, 0, 2);
-        // return flag;
         for (set<int>::iterator it = st.begin(); it != st.end(); it++){
             int root = *it;
             int val;
-            // for (int i = 0; i <=3; i++){
-            //     flag = dfs(st, root, root, i);
-            //     if (flag) return true;
-            // }
+            st.erase(root);
             flag = dfs(st, root, 1, 0);
             if (flag) return true;
+            st.insert(root);
+            it = st.begin();
         }
         return false;
     }
@@ -48,16 +45,21 @@ public:
         }
         if (val == 24) return true;
 
-        st.erase(root);
+        // st.erase(root);
 
         bool flag;
         for (set<int>::iterator it = st.begin(); it != st.end(); it++){
-            int root = *it;
+            int child = *it; // 后续清空了迭代器，则会变得无效
+            st.erase(child);
             for (int i = 0; i <=3; i++){
-                flag = dfs(st, root, val, i);
-                if (flag) return true;
-                st.insert(root);
+                flag = dfs(st, child, val, i);
+                if (flag) return true;   
             }
+            st.insert(child);
+            it = st.begin(); // 这依然不是办法，还是麻烦在集合的遍历有问题，这一点远不如数组
+            // 这里若不写，会引起段错误，成begin，则又回到第二位，而永远到不了
+            // 所以另一种方法是不用集合，还是用数组，只不过多一个参考标记
+            // st.insert(root);
         }
         return false;
 
