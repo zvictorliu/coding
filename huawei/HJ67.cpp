@@ -3,7 +3,7 @@
 #include <set>
 using namespace std;
 
-class Solution{
+class Solution{ // failed
 
 public:
     bool isTwentyFour(vector<int> &nums){
