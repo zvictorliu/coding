@@ -7,10 +7,10 @@ using namespace std;
 class Solution {
 public:
     int maxProduct(vector<string>& words) {
-        // å¦‚æœè‡ªå®šä¹‰æ’åºæ–¹å¼ï¼Œç„¶åæŸ¥æ‰¾ï¼Ÿ
+        // Èç¹û×Ô¶¨ÒåÅÅĞò·½Ê½£¬È»ºó²éÕÒ£¿
         // sort(words.begin(), words.end(), cmp);
         // int N = words.size();
-        // // è¯¥å¦‚ä½•æŸ¥æ‰¾ï¼Ÿæ“‚å°æ³•ï¼Œæ’åºä¹Ÿæ²¡æœ‰æ„ä¹‰äº†
+        // // ¸ÃÈçºÎ²éÕÒ£¿ÀŞÌ¨·¨£¬ÅÅĞòÒ²Ã»ÓĞÒâÒåÁË
         // return 0;
         int N = words.size();
         vector<int> masks(N, 0);
@@ -25,20 +25,20 @@ public:
         int maxPdct = 0;
         for (int i = 0; i < N; i++){
             for (int j = i+1; j < N; j++){
-                if ((masks[i] & masks[j]) == 0) { //æ— å­—æ¯é‡åˆ
-                    maxPdct = max(maxPdct, int(words[i].length()*words[j].length())); //è¦å¼ºåˆ¶è½¬æ¢ï¼Ÿ
+                if ((masks[i] & masks[j]) == 0) { //ÎŞ×ÖÄ¸ÖØºÏ
+                    maxPdct = max(maxPdct, int(words[i].length()*words[j].length())); //ÒªÇ¿ÖÆ×ª»»£¿
                 }
             }
         }
         return maxPdct;
     }
 
-    // static bool cmp(string a, string b){ // è¿™é‡Œè¦é™æ€
+    // static bool cmp(string a, string b){ // ÕâÀïÒª¾²Ì¬
     //     return a.length() >= b.length() ? true : false;
     // }
 
     // bool isNoSame(string &a, string &b){
-    //     // å¦‚ä½•è¾ƒå¿«æ¯”è¾ƒæœ‰æ²¡æœ‰é‡å¤å…ƒç´ å‘¢ï¼Ÿ
+    //     // ÈçºÎ½Ï¿ì±È½ÏÓĞÃ»ÓĞÖØ¸´ÔªËØÄØ£¿
     //     // int m = a.length(), n = b.length();
     //     // for (int i = 0; i < m; i++){
     //     //     for (int j = 0; j < n; j++){
@@ -46,7 +46,7 @@ public:
     //     //     }
     //     // }
 
-    //     //ä½è¿ç®—æ³•
+    //     //Î»ÔËËã·¨
     //     return true;
     // }
 };

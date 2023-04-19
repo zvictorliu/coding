@@ -2,7 +2,7 @@
 #include <stack>
 using namespace std;
 
-class Solution { // 鍙互浼樺寲涓轰粠灏鹃儴閬嶅巻锛岃繖鏍峰氨涓嶉渶瑕佹爤浜嗭紝瀵圭粨鏋滃彲浠ヤ娇鐢╮everse鍑芥暟
+class Solution { // 可以优化为从尾部遍历，这样就不需要栈了，对结果可以使用reverse函数
 public:
     string addBinary(string a, string b) {
         stack<int> aStk,bStk,resStk;

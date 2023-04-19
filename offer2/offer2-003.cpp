@@ -5,9 +5,9 @@ using namespace std;
 class Solution {
 public:
     vector<int> countBits(int n) {
-        // å¥‡æ•°
-        // å¶æ•°
-        // æ„Ÿè§‰å¯ä»¥åŠ¨æ€è§„åˆ’
+        // ÆæÊı
+        // Å¼Êı
+        // ¸Ğ¾õ¿ÉÒÔ¶¯Ì¬¹æ»®
         vector<int> dp(n+1);
         for (int i = 0; i <= n; i++){
             if (i == 0) dp[i] = 0;
