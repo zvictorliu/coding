@@ -53,10 +53,25 @@ public:
 class Solution {
 public:
     int trap(vector<int>& height){
-        // 必须得形成 高-低-高 的结构
-        // 左边界向右，比左边界高则更新，遇到第一个拐点
-        // 然后再向右，又遇到一个拐点后，开始算这个小坑的，算完，如果继续上升则还可以继续扩大坑
-        // 直到又成了拐点，。。用栈确实能比较好的跟踪历史
+        int sum = 0;
+        stack<int> stk;
+        int N = height.size();
+        int current = 0;
+        while (current < N){
+            while (!stk.empty() && height[current] > height[stk.top()])
+            {
+                int base = height[stk.top()];
+                stk.pop();
+                if (stk.empty()) break; // 积不了水
+                int len = current - stk.top() - 1; // 距离
+                int h = min(height[current], height[stk.top()]) - base; // 两侧最小高度-base
+                sum += h*len;
+            }
+            stk.push(current);
+            current++;
+        }
+
+        return sum;
     }
 
 };

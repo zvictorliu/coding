@@ -7,7 +7,7 @@
 #include <limits>
 using namespace std;
 
-class Solution {
+class Solution1 { // Prim 算法
 public:
     int minCostConnectPoints(vector<vector<int>>& points) {
         // 构建邻接矩阵，然后求最小生成树
@@ -46,9 +46,17 @@ public:
     }
 };
 
+class Solution { // Kruskal 算法
+public:
+    int minCostConnectPoints(vector<vector<int>>& points) {
+        //todo 构造边集
+        // 不太好构造，算了
+    }
+};
+
 int main() {
 
-    Solution res;
+    // Solution res;
     
     return 0;
 }
