@@ -37,6 +37,7 @@ public:
                             if (tmap[s[l]] > 0) {
                                 needCnt ++;
                                 break;
+                              
                             }
                              
                         }
