@@ -17,7 +17,16 @@ struct ListNode {
 
 
 class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        // 这个题很适合递归解法，只是感受不到
+        if (head == nullptr || head->next == nullptr) return head;
+        ListNode *next = head->next;
+        head->next = swapPairs(next->next);
+        next->next = head;
 
+        return next;
+    }
 };
 
 int main() {
